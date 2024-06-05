@@ -29,7 +29,8 @@ public class PlayerControllerWorker : MonoBehaviour
 
     private void OnMove(InputValue inputSystem)
     {
-        Debug.Log(inputSystem.Get<Vector2>());
+        var dir = inputSystem.Get<Vector2>();
+        _player.Move(dir);
     }
 
     public void Init(CinemachineCamera playerCamera, Unit player)

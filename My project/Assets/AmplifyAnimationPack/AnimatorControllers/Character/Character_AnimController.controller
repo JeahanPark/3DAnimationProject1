@@ -15814,11 +15814,11 @@ AnimatorStateMachine:
     m_Position: {x: 1584, y: 372, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102289213796603602}
-    m_Position: {x: 72, y: 384, z: 0}
+    m_Position: {x: 70, y: 380, z: 0}
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: 1107261851812988160}
-    m_Position: {x: 360, y: 132, z: 0}
+    m_Position: {x: 360, y: 130, z: 0}
   - serializedVersion: 1
     m_StateMachine: {fileID: 1107518369296776074}
     m_Position: {x: 480, y: 492, z: 0}
