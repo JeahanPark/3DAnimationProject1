@@ -7,8 +7,9 @@ public class Unit : Interaction
     [SerializeField] protected Animator animator;
 
     private bool _move;
-    protected Vector3 MoveDir;
-    private float _speed;
+    private Vector3 _moveDir;
+    private float _speed = 5f;
+
     
     public void Move(Vector2 dir)
     {
@@ -24,15 +25,23 @@ public class Unit : Interaction
 
         if (_move)
         {
-            MoveDir = new Vector3(dir.x, 0, dir.y);
-            Debug.Log(MoveDir);
+            _moveDir = new Vector3(dir.x, 0, dir.y);
+            Debug.Log(_moveDir);
         }
             
     }
 
     private void Update()
     {
-        if(_move)
-            CachedTransform.position += Time.deltaTime * _speed * MoveDir;
+        if (_move)
+        {
+            float angle = Mathf.Atan2(_moveDir.x, _moveDir.z) * Mathf.Rad2Deg;
+            
+            Quaternion rotation = Quaternion.Euler(0, angle, 0);
+            
+            Vector3 rotatedVector = rotation * transform.forward;
+            
+            CachedTransform.position += Time.deltaTime * _speed * rotatedVector.normalized;
+        }
     }
 }

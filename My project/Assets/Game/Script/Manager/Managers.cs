@@ -13,8 +13,8 @@ public class Managers : MonoBehaviour
         }
     }
 
-    private SceneManager SceneManager = new SceneManager();
-    public static SceneManager Scene => Instance.SceneManager;
+    private SceneManager _sceneManager = new SceneManager();
+    public static SceneManager Scene => Instance._sceneManager;
     
     private static void InitInstance()
     {

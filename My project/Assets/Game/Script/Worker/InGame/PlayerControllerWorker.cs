@@ -46,7 +46,11 @@ public class PlayerControllerWorker : MonoBehaviour
         if (_camera == null || _player == null)
             return;
         
-        _camera.Follow = _player.transform;
+        //_camera.Follow = _player.transform;
     }
 
+    private void Update()
+    {
+        
+    }
 }
